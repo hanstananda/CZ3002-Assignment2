@@ -1,6 +1,6 @@
 # Struts Web Application 
 This project is build to fulfill the requirements for CZ3002 Assignment 2. 
-This is built by Assignment Group 43 of CZ3002. 
+This application uses [Semantic-UI](https://semantic-ui.com/introduction/getting-started.html) as the underlying UI CSS framework for this application. It is using the CDN version of the  Semantic UI and therefore requires internet connection for it to properly load. 
 
 ## Getting Started 
 
@@ -26,6 +26,7 @@ Optional: IntelliJ IDEA(Auto setup maven and dependencies)
 2.  Open the application on `http://localhost:8080/struts-webapp/`
 
 ### Contributors 
+This is built by Assignment Group 43 of CZ3002, consisting of: 
 1. [Hans Tananda](https://github.com/hanstananda)
 2. [Farhan Khalifa Ibrahim](Enter your github here)
 3. [Marcus Tan Kai Lun](Enter your github here)
