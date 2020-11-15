@@ -23,9 +23,9 @@ import com.opensymphony.xwork2.Action;
 /**
  * 
  */
-public class HelloWorldActionTest extends TestCase {
+public class LoginActionTest extends TestCase {
     
-    public void testHelloWorldAction() throws Exception {
+    public void testLoginActionSuccess() throws Exception {
         LoginAction action = new LoginAction();
         action.setUsername("test");
         action.setPassword("test");
