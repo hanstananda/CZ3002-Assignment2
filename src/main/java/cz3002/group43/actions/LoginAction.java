@@ -10,6 +10,7 @@ import com.opensymphony.xwork2.conversion.annotations.Conversion;
 import com.opensymphony.xwork2.conversion.annotations.TypeConversion;
 import com.opensymphony.xwork2.util.logging.Logger;
 import com.opensymphony.xwork2.util.logging.LoggerFactory;
+import cz3002.group43.utils.PasswordHasher;
 
 public class LoginAction extends ActionSupport {
 
@@ -55,7 +56,8 @@ public class LoginAction extends ActionSupport {
     }
 
     private static boolean checkLogin(String username, String password) {
-        return username.equals("test") && password.equals("test");
+        String hashedPassword = PasswordHasher.hashString(password);
+        return username.equals("test") && hashedPassword.equals(PasswordHasher.hashString("test"));
     }
 
 }
