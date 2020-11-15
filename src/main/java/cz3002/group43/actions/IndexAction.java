@@ -22,6 +22,11 @@ import com.opensymphony.xwork2.conversion.annotations.TypeConversion;
 
 @Conversion()
 public class IndexAction extends ActionSupport {
+
+    private String errorMsg = "";
+    public String getErrorMsg() {
+        return errorMsg;
+    }
     
     private Date now = new Date(System.currentTimeMillis());
     

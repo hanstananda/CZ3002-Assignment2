@@ -17,6 +17,14 @@
     <s:textfield class="field" label="Password" name="password"/>
 
     <s:submit class="ui button"/>
+
+    <s:if test="errorMsg!=''">
+        <div class="ui negative  message">
+            <div class="header">Invalid Login</div>
+            <p><s:property value="errorMsg" /></p>
+        </div>
+    </s:if>
+
 </s:form>
 
 <%--<form class="ui form" action="login">--%>
