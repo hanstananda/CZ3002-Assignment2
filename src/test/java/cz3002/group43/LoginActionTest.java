@@ -15,21 +15,22 @@
  */
 package cz3002.group43;
 
-import com.opensymphony.xwork2.ActionSupport;
-import java.util.Date;
-import com.opensymphony.xwork2.conversion.annotations.Conversion;
-import com.opensymphony.xwork2.conversion.annotations.TypeConversion;
+import cz3002.group43.actions.LoginAction;
+import junit.framework.TestCase;
 
-@Conversion()
-public class IndexAction extends ActionSupport {
+import com.opensymphony.xwork2.Action;
+
+/**
+ * 
+ */
+public class HelloWorldActionTest extends TestCase {
     
-    private Date now = new Date(System.currentTimeMillis());
-    
-    @TypeConversion(converter = "cz3002.group43.DateConverter")
-    public Date getDateNow() { return now; }
-    
-    public String execute() throws Exception {
-        now = new Date(System.currentTimeMillis());
-        return SUCCESS;
+    public void testHelloWorldAction() throws Exception {
+        LoginAction action = new LoginAction();
+        action.setUsername("test");
+        action.setPassword("test");
+        String result = action.execute();
+        assertEquals(Action.SUCCESS, result);
     }
 }
+

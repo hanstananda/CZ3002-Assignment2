@@ -13,21 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cz3002.group43;
+package cz3002.group43.actions;
 
-import junit.framework.TestCase;
+import com.opensymphony.xwork2.ActionSupport;
+import java.util.Date;
+import com.opensymphony.xwork2.conversion.annotations.Conversion;
+import com.opensymphony.xwork2.conversion.annotations.TypeConversion;
 
-import com.opensymphony.xwork2.Action;
-
-/**
- * 
- */
-public class HelloWorldActionTest extends TestCase {
+@Conversion()
+public class IndexAction extends ActionSupport {
     
-    public void testHelloWorldAction() throws Exception {
-        HelloWorldAction action = new HelloWorldAction();
-        String result = action.execute();
-        assertEquals(Action.SUCCESS, result);
+    private Date now = new Date(System.currentTimeMillis());
+    
+    @TypeConversion(converter = "cz3002.group43.utils.DateConverter")
+    public Date getDateNow() { return now; }
+    
+    public String execute() throws Exception {
+        now = new Date(System.currentTimeMillis());
+        return SUCCESS;
     }
 }
-
