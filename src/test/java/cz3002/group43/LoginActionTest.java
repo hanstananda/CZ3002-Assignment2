@@ -32,5 +32,13 @@ public class LoginActionTest extends TestCase {
         String result = action.execute();
         assertEquals(Action.SUCCESS, result);
     }
+
+    public void testWrongCredentialError() throws  Exception {
+        LoginAction action = new LoginAction();
+        action.setUsername("test");
+        action.setPassword("wrong");
+        String result = action.execute();
+        assertEquals(Action.ERROR, result);
+    }
 }
 
