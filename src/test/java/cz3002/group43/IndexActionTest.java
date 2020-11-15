@@ -15,6 +15,7 @@
  */
 package cz3002.group43;
 
+import cz3002.group43.actions.IndexAction;
 import junit.framework.TestCase;
 
 import com.opensymphony.xwork2.Action;

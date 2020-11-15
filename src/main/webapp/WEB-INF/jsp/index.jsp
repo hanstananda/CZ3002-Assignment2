@@ -11,12 +11,25 @@
 </head>
 
 <body>
-<s:form class="ui form" action="helloWorld">
-    <s:textfield class="field" label="What is your name?" name="name"/>
+<s:form class="ui form" action="login">
+    <s:textfield class="field" label="Username" name="username"/>
 
-    <s:textfield class="field" label="What is the date?" name="dateNow"/>
+    <s:textfield class="field" label="Password" name="password"/>
 
     <s:submit class="ui button"/>
 </s:form>
+
+<%--<form class="ui form" action="login">--%>
+<%--    <div class="field">--%>
+<%--        <label>Username</label>--%>
+<%--        <input type="text" name="username" placeholder="Username">--%>
+<%--    </div>--%>
+<%--    <div class="field">--%>
+<%--        <label>Password</label>--%>
+<%--        <input type="text" name="password" placeholder="Password">--%>
+<%--    </div>--%>
+<%--    <button class="ui button" type="submit">Submit</button>--%>
+<%--</form>--%>
+
 </body>
 </html>
