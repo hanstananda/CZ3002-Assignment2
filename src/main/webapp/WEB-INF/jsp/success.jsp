@@ -6,11 +6,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <title>Hello World</title>
+    <title>Group 43 Login Successful Page</title>
     <s:head />
 </head>
 <body>
-Hello <s:property value="username"/>, today is <s:property value="dateNow" /><br/>
+<h3 class="ui grey icon header">
+  <i class="check circle icon"></i>
+   Successful Login!
+</h3>
 
 </body>
 </html>

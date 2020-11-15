@@ -6,27 +6,35 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <title>Group 43 Web application</title>
+    <title>Group 43 Login Page</title>
     <s:head/>
 </head>
 
 <body>
-<s:form class="ui form" action="login">
-    <s:textfield class="field" label="Username" name="username"/>
+<div class="column">
+    <div>
+        <div class="ui secondary stacked segment">
+        <h2 class="ui grey center aligned icon header">
+            <i class="circular user icon"></i>
+            Login
+        </h2>
+            <s:form class="ui form" action="login">
+                <s:textfield class="field" placeholder="Username" name="username"/>
 
-    <s:textfield class="field" label="Password" name="password"/>
+                <s:password class="field" placeholder="Password" name="password"/>
 
-    <s:submit class="ui button"/>
+                <s:submit class="ui fluid large teal submit button" value="Login"/>
 
-    <s:if test="errorMsg!=''">
-        <div class="ui negative  message">
-            <div class="header">Invalid Login</div>
-            <p><s:property value="errorMsg" /></p>
+                <s:if test="errorMsg!=''">
+                    <div class="ui negative message">
+                        <div class="header">Invalid Login</div>
+                        <p><s:property value="errorMsg" /></p>
+                    </div>
+                </s:if>
+            </s:form>
         </div>
-    </s:if>
-
-</s:form>
-
+    </div>
+</div>
 <%--<form class="ui form" action="login">--%>
 <%--    <div class="field">--%>
 <%--        <label>Username</label>--%>
