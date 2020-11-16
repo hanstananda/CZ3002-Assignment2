@@ -18,26 +18,15 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.js"></script>
-<div class="ui inverted menu">
-    <div class="header item">
-        Group 43 Web application
-    </div>
-</div>
-<div class="ui divider"></div>
-<div class="ui container">
+
+<h1 class="ui teal center aligned header">CZ3002 Assignment 2 Group 43</h1>
+<div class="ui hidden divider"></div>
     <div id="content" class="ui main text container">
-        <h1 class="ui header">Hello World</h1>
-        <div id="main">
-            <h3>Main Content</h3>
-            <decorator:body/>
+        <div class="ui middle aligned center aligned grid">
+            <div id="main">
+                <decorator:body/>
+            </div>
         </div>
     </div>
-</div>
-<div id="footer" class="ui inverted vertical footer segment">
-    Footer
-</div>
-
-<div id="extra1">&nbsp;</div>
-<div id="extra2">&nbsp;</div>
 </body>
 </html>
