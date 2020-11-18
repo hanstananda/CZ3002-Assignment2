@@ -35,8 +35,8 @@ public class UserModel extends ActionSupport {
             e.printStackTrace();
         }
 
-        this.dbUserName = System.getProperty("USERNAME", "root");
-        this.dbPassword = System.getProperty("PASSWORD", "");
+        this.dbUserName = System.getProperty("DB_USERNAME", "root");
+        this.dbPassword = System.getProperty("DB_PASSWORD", "");
 
     }
 

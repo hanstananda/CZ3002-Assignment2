@@ -60,7 +60,7 @@ public class LoginAction extends ActionSupport {
         String hashedPassword = PasswordHasher.hashString(password);
         UserModel s = new UserModel();
         s.setUser(username);
-        s.setPassword(password);
+        s.setPassword(hashedPassword);
         String result = s.execute();
         LOG.info(result);
         return (result.equals(SUCCESS));
