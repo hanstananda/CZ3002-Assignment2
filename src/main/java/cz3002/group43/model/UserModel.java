@@ -1,24 +1,27 @@
-package cz3002.group43.actions;
+package cz3002.group43.model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.*;
 import com.opensymphony.xwork2.ActionSupport;
 
 
-public class SQLTesting {
-    private static String user;
-    private  static String password;
-    private static String name;
+public class UserModel extends ActionSupport {
 
-    public static String execute() {
-        String ret = "ERROR";
+    private String user;
+    private String password;
+    private String name;
+
+    public String execute() {
+        String ret = ERROR;
         Connection conn = null;
 
         try {
-            String URL = "jdbc:mysql://127.0.0.1:3306/cz3002";
-            Class.forName("com.mysql.jdbc.Driver");
+            String URL = "jdbc:mysql://127.0.0.1:3306/cz3002?useTimezone=true&serverTimezone=GMT%2B8";
+            Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(URL, "root", "");
+            System.out.println("Get inside DB");
             String sql = "SELECT name FROM user_table WHERE";
             sql+=" user = ? AND password = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -27,11 +30,13 @@ public class SQLTesting {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                name = rs.getString(1);
-                ret = "SUCCESS";
+                String name = rs.getString(1);
+                System.out.println(name);
+                ret = SUCCESS;
             }
         } catch (Exception e) {
-            ret = "ERROR";
+            e.printStackTrace();
+            ret = ERROR;
         } finally {
             if (conn != null) {
                 try {
@@ -65,11 +70,5 @@ public class SQLTesting {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public static void main(String[] args){
-        user = "FARHAN";
-        password = "FARHAN";
-        System.out.println(execute());
     }
 }
