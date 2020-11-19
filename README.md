@@ -5,25 +5,53 @@ This application uses [Semantic-UI](https://semantic-ui.com/introduction/getting
 ## Getting Started 
 
 ### Requirements 
-1. Java (This repository has been set up to run under Java 8 and above)
-2. Maven 
+1. [Java](https://www.java.com/en/download/) (This repository has been set up to run under Java 8 and above)
+2. [Maven](https://maven.apache.org/install.html) 
+3. [MySQL](https://dev.mysql.com/downloads/)
 
 Optional: IntelliJ IDEA(Auto setup maven and dependencies)
 
-### Dependencies 
+### Project dependencies 
 1.  `struts2` Required to create the MVC Web App.
 2.  `jetty-maven-plugin` Integration with Maven and Jetty web server.
 3.  `log4j` For logging purposes.
 4.  `junit` For testing purposes. 
+5.  `mysql-connector-java` To bridge the connection between Java and MySQL.
+
+### Setting up the application 
+1.  Set the following environment variables for mysql connection:
+    *   `DB_USERNAME`: This denotes your MySQL username. 
+    *   `DB_PASSWORD`: This denotes your MySQL password.
+    For example, in unix bash you can do the following:
+    ```bash
+    DB_USERNAME=hans
+    DB_PASSWORD=password
+    ```
+
+2.  Run the commands under `src/main/resources/Database_Generator.sql` 
+    to setup the MySQL database. There are several ways to do it, shown [here](https://stackoverflow.com/questions/8940230/how-to-run-sql-script-in-mysql)
+    For example, in unix bash you can do the following:
+    ```bash 
+    mysql -u ${DB_USERNAME} --password=${DB_PASSWORD} < src/main/resources/Database_Generator.sql 
+    ```
+
+3.  Everything should be set up and now you can run the web server. 
 
 ### Running the application 
 
 1.  Run the following command on the terminal: 
     ```bash
-    mvn jetty:run
+    mvn jetty:run -Ddb.username=${DB_USERNAME} -Ddb.password=${DB_PASSWORD}
     ```
 
 2.  Open the application on `http://localhost:8080/struts-webapp/`
+
+### Packaging the application 
+
+1.  Run the following command: 
+    ```bash
+    mvn package -Ddb.username=${DB_USERNAME} -Ddb.password=${DB_PASSWORD}
+    ```
 
 ### Folder structure 
 

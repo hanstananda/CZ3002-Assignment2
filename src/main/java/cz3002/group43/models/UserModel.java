@@ -1,14 +1,9 @@
 package cz3002.group43.models;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Properties;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.util.logging.Logger;
@@ -25,19 +20,8 @@ public class UserModel extends ActionSupport {
     private final String dbPassword;
 
     public UserModel() {
-
-        String resourceName = "database.properties"; // could also be a constant
-        ClassLoader loader = getClass().getClassLoader();
-        Properties props = new Properties();
-        try(InputStream resourceStream = loader.getResourceAsStream(resourceName)) {
-            props.load(resourceStream);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        this.dbUserName = System.getProperty("DB_USERNAME", "root");
-        this.dbPassword = System.getProperty("DB_PASSWORD", "");
-
+        this.dbUserName = System.getProperty("db.username", "root");
+        this.dbPassword = System.getProperty("db.password", "");
     }
 
     public String execute() {
