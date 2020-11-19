@@ -19,11 +19,6 @@ public class LoginAction extends ActionSupport {
     private String username;
     private String password;
     private String errorMsg = "";
-    private Date now = new Date(System.currentTimeMillis());
-
-    @TypeConversion(converter = "cz3002.group43.utils.DateConverter") public Date getDateNow() {
-        return now;
-    }
 
     public String getErrorMsg() {
         return errorMsg;
@@ -48,7 +43,6 @@ public class LoginAction extends ActionSupport {
     public String execute() throws Exception {
         LOG.info("Logging in...");
         if (checkLogin(this.username, this.password)) {
-            now = new Date(System.currentTimeMillis());
             errorMsg = "";
             return SUCCESS;
         }
