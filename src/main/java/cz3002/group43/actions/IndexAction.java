@@ -27,14 +27,8 @@ public class IndexAction extends ActionSupport {
     public String getErrorMsg() {
         return errorMsg;
     }
-    
-    private Date now = new Date(System.currentTimeMillis());
-    
-    @TypeConversion(converter = "cz3002.group43.utils.DateConverter")
-    public Date getDateNow() { return now; }
-    
+
     public String execute() throws Exception {
-        now = new Date(System.currentTimeMillis());
         return SUCCESS;
     }
 }
