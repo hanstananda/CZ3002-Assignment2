@@ -23,7 +23,7 @@ import com.opensymphony.xwork2.Action;
 /**
  * 
  */
-public class LoginActionTest extends TestCase {
+public class LoginActionIntegrationTest extends TestCase {
     
     public void testLoginActionSuccess() throws Exception {
         LoginAction action = new LoginAction();
