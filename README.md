@@ -1,6 +1,6 @@
 # Struts Web Application 
 This project is build to fulfill the requirements for CZ3002 Assignment 2. 
-This application uses [Semantic-UI](https://semantic-ui.com/introduction/getting-started.html) as the underlying UI CSS framework for this application. It is using the CDN version of the  Semantic UI and therefore requires internet connection for it to properly load. 
+This application uses [Semantic-UI](https://semantic-ui.com/introduction/getting-started.html) as the underlying UI CSS framework for this application. 
 
 ## Getting Started 
 
