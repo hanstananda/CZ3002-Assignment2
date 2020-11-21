@@ -12,6 +12,7 @@ This application uses [Semantic-UI](https://semantic-ui.com/introduction/getting
 Optional: IntelliJ IDEA(Auto setup maven and dependencies)
 
 ### Project dependencies 
+All project dependencies listed below will be automatically installed with maven while you are building the application. 
 1.  `struts2` Required to create the MVC Web App.
 2.  `jetty-maven-plugin` Integration with Maven and Jetty web server.
 3.  `log4j` For logging purposes.
@@ -70,18 +71,20 @@ Note: The Integration Tests will automatically run the Unit Tests beforehand.
 
 ## Folder structure 
 
-All source codes are under `src/main/java/cz3002/group43` and the unit tests are under `src/test/java/cz3002/group43`, where `cz3002.group43` is the group id for this java project. 
+All source codes are located under `src/main/java/cz3002/group43` and the tests are under `src/test/java/cz3002/group43`.  
+`cz3002.group43` denotes the group id for this java project. 
+
 Following are further explanation of folder structure in the source code directory: 
 *   `actions`  
-    This folder contains java classes which are responsible to handle the Actions from the MVC struts. 
+    This directory contains java classes which are responsible to handle the actions from the MVC struts. For example, our `LoginAction` and `IndexAction`, which handle, process, and serve requests from Login and Homepage respectively, are located in this directory.
 *   `models`  
-    This folder contains java classes which are responsible to specify the models available in the MVC struts, as well as to communicate with the database. 
-*   `utils`
-    This folder contains java classes that is used to provide utility functions used within the project. 
+    This directory contains java classes which are responsible to specify the models available in the MVC struts, as well as to communicate with the database. Our `UserModel` which saves the User Model and communicates with the database  is located in this directory. 
+*   `utils`  
+    This directory contains java classes which are used to provide utility functions used within the project. For example, `PasswordHasher` class, which is responsible to hash the password sent from the user is located in this directory. 
 
-The configuration files (log configuration, struts configuration, server configuration) are located under `src/main/resources`. 
+All resource files are located under `src/main/resources`. This includes configuration files such as log configuration, struts configuration, server configuration. The database generation script `Database_generator.sql` is located here as well.
 
-The `.jsp` files are located under `/src/main/webapp`. 
+All ‘.jsp’, ‘.css’, and other files related to the website UI are located under ‘/src/main/webapp’. 
 
 ## Contributors 
 This is built by Assignment Group 43 of CZ3002, consisting of: 
